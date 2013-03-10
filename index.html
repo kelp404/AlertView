@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>AlertView</title>
+    <meta name="author" content="Kelp">
+    <meta name="description" content="Alert View is an alert division which is a jQuery extension. It is like OS X notification window, or Twitter alert message." />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!-- AlertView begin -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/alert_view.css"/>
+    <script type="text/javascript" src="/alert_view.min.js"></script>
+    <!-- AlertView end -->
+    <link rel="stylesheet" type="text/css" href="https://flask-gae-kelp.appspot.com/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/site.css"/>
+    <script type="text/javascript" src="/site.min.js"></script>
+</head>
+<!--
+         _    _           _    __     ___
+        / \  | | ___ _ __| |_  \ \   / (_) _____      __
+       / _ \ | |/ _ \ '__| __|  \ \ / /| |/ _ \ \ /\ / /
+      / ___ \| |  __/ |  | |_    \ V / | |  __/\ V  V /
+     /_/   \_\_|\___|_|   \__|    \_/  |_|\___| \_/\_/
+-->
+<body>
+    <!-- nav bar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="span12">
+                    <a class="brand" href="/">AlertView</a>
+                    <ul id="nav_bar" class="nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="https://github.com/kelp404/AlertView" target="_blank">Fork me on GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- content container -->
+    <div id="content_background">
+        <div class="container">
+            <div id="alert_view_center" class="offset1 span10"></div>
+
+            <!-- menu -->
+            <div class="span3">
+                <ul class="nav nav-tabs nav-stacked affix span3 menu">
+                    <li><a class="center_msg" href="/center#">Alert message</a></li>
+                    <li><a class="center_error_msg" href="/center_error#">Alert error message</a></li>
+                    <li><a class="center_black_msg" href="/center_black#">Alert black message</a></li>
+                    <li><a class="right_msg" href="/right#">Notification message</a></li>
+                    <li><a class="right_error_msg" href="/right_error#">Notification error message</a></li>
+                    <li><a class="right_black_msg" href="/right_black#">Notification black message</a></li>
+                </ul>
+            </div>
+
+            <!-- content -->
+            <div class="offset3 span9" style="min-height: 400px;">
+                <p>AlertView is an alert division which is a jQuery extension. It is like OS X notification window, or Twitter alert message.</p>
+                AlertView provides two modes.
+                <strong>Notification mode</strong> is like OS X notification window.
+                <strong>Alert mode</strong> is like Twitter alert message.
+
+                <legend>Include jQuery and AlertView</legend>
+                <pre>
+&lt;script type="text/javascript" src="/jquery/1.9.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="/alert_view.css"/&gt;
+&lt;script type="text/javascript" src="/alert_view.min.js"&gt;&lt;/script&gt;</pre>
+
+                <legend>Alert mode</legend>
+                You should add a <code>#alert_view_center</code> element in body, AlertView will be showed in that.
+                <pre>
+&lt;div class="container"&gt;
+    &lt;div id="alert_view_center" class="offset1 span10"&gt;&lt;/div&gt;
+    ......</pre>
+
+                <pre>
+$.av.pop({
+    mode: 'alert',
+    title: 'Title',
+    message: 'AlertView is an alert division ....'
+});
+
+// black template
+$.av.pop({
+    mode: 'alert',
+    template: 'black',
+    title: 'Title',
+    message: 'AlertView is an alert division ....'
+});
+
+// error template and not auto hide
+$.av.pop({
+    mode: 'alert',
+    template: 'error',
+    expire: 0,
+    title: 'Title',
+    message: 'AlertView is an alert division ....'
+});</pre>
+
+                <legend>Notification mode</legend>
+                <pre>
+$.av.pop({
+    title: 'Title',
+    message: 'AlertView is an alert division ....'
+});
+
+// black template and hide after two seconds
+$.av.pop({
+    template: 'black',
+    expire: 2000,
+    title: 'Title',
+    message: 'AlertView is an alert division ....'
+});</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <p>
+            &copy; 2013 <a href="https://github.com/kelp404" target="_blank" rel="tooltip" title="Kelp on GitHub">Kelp</a>.
+        </p>
+    </div>
+</body>
+</html>
