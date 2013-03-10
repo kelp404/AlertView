@@ -17,6 +17,7 @@
     opacity: 0.9;
     padding: 10px;
     position: absolute;
+    color: #333;
 
     background-color:#f5f5f5;
     border:1px solid #e3e3e3;
@@ -35,15 +36,16 @@
     position: fixed;
     margin: 10px;
     width: 250px;
-    height: 65px;
+    height: 70px;
     -webkit-box-shadow: 0 0 10px #444;
     -moz-box-shadow: 0 0 10px #444;
     box-shadow: 0 0 10px #444;
 }
 .alert_view .av_title {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 25px;
     font-weight: bolder;
+    color: #222;
 }
 .alert_view .av_message {
     margin-left: 10px;
@@ -63,6 +65,7 @@
     margin-left: 0;
 }
 .alert_view .av_close {
+    line-height: 25px;
     float: right;
     font-weight: bold;
     cursor: pointer;

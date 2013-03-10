@@ -12,7 +12,7 @@ $.extend $,
     av:
         version: '1.0'
         width: 250
-        height: 82
+        height: 85
         prefix: 'alert_view_'
         increment_id: 0
         queue: []

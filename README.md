@@ -12,9 +12,9 @@ Kelp https://twitter.com/kelp404
      /_/   \_\_|\___|_|   \__|    \_/  |_|\___| \_/\_/
 ```
 
-AlertView is an alert division which is a jQuery extension. It is like OS X notification window, or Twitter alert message.  
+AlertView is an alert division which is a jQuery extension. It is like OS X notification window, and Twitter alert message.  
 
-AlertView provides two modes. Notification mode is like OS X notification window. Alert mode is like Twitter alert message.  
+AlertView provides two modes. `Notification mode` is like OS X notification window. `Alert mode` is like Twitter alert message.  
 It provides three templates: `default`, `error`, `black`.  
 
 
@@ -78,4 +78,13 @@ $.av.pop({
     title: 'Title',
     message: 'Alert View is an alert division ....'
 });
+```
+
+
+##Close AlertView
+```javascript
+var aid = $.av.pop({
+        title: 'Title',
+        message: 'Alert View is an alert division ....'});
+$.av.hide(aid);
 ```
