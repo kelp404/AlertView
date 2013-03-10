@@ -14,12 +14,6 @@
     local(Ubuntu),
     local(Arial);
 }
-@font-face {
-    font-family: 'Segoe Print';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Segoe Print'), local('SegoePrint'), url('/css/segoepr.ttf');
-}
 
 body
 {
