@@ -12,7 +12,7 @@ Kelp https://twitter.com/kelp404
      /_/   \_\_|\___|_|   \__|    \_/  |_|\___| \_/\_/
 ```
 
-AlertView is a jQuery plugin that provides alerting message. It is like OS X notification window, and Twitter alert message.  
+AlertView is a jQuery plugin that provides alerting message. That are like OS X notification window, and Twitter alert message.  
 
 AlertView provides two modes. `Notification mode` is like OS X notification window. `Alert mode` is like Twitter alert message.  
 It provides three templates: `default`, `error` and `black`.  
