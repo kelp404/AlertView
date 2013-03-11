@@ -12,7 +12,7 @@ $.extend $,
     av:
         version: '1.0'
         width: 250
-        height: 85
+        height: 88
         prefix: 'alert_view_'
         increment_id: 0
         queue: []
@@ -36,10 +36,10 @@ $.extend $,
                         arg.message +
                         "</span><div class='av_close' onclick=\"$.av.hide('#{aid}');\">X</div></div>"
                 box.css {width: $('#alert_view_center').width()}
-                box.css {opacity: 0.0} if $('#alert_view_center').find('.alert_view').length is 0
+                box.css {opacity: 0.0, 'margin-top': '-25px'} if $('#alert_view_center').find('.alert_view').length is 0
                 $('#alert_view_center').html(box)
 
-                $('#' + aid).animate opacity: 0.9, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
+                $('#' + aid).animate {opacity: 0.9, 'margin-top': '0'}, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
             else
                 # notification mode
                 box = $ "<div id='#{aid}' class='alert_view alert_view_notification'><div class='av_title'>" + arg.title + '</div><div class="av_message">' + arg.message + '</div></div>'
@@ -61,7 +61,7 @@ $.extend $,
             ###
             hide alert view.
             ###
-            if $('#' + aid).hasClass('alert_view_notification')
+            if $('#' + aid).hasClass 'alert_view_notification'
                 # notification mode
                 $('#' + aid).animate right: -@width, 400, 'avInExpo', ->
                     remove_top = parseInt $(@).css('top')
@@ -77,6 +77,5 @@ $.extend $,
                             $box.animate top: top, 400, 'avOutExpo'
             else
                 # alert mode
-                $('#' + aid).animate opacity: 0.0, 400, 'avOutExpo', ->
-                    $(@).remove()
+                $('#' + aid).animate opacity: 0.0, 400, -> $(@).remove()
             return
