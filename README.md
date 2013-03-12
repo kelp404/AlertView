@@ -16,6 +16,7 @@ AlertView is a jQuery plugin that provides alerting message. That are like OS X 
 
 AlertView provides two modes. `Notification mode` is like OS X notification window. `Alert mode` is like Twitter alert message.  
 It provides three templates: `default`, `error` and `black`.  
+Enjoy it :-)  
 
 
 ##Demo
@@ -29,6 +30,23 @@ https://alert-view.appspot.com/
 <link rel="stylesheet" type="text/css" href="/alert_view.css"/>
 <script type="text/javascript" src="/alert_view.min.js"></script>
 ```
+
+
+##Functions
+```javascript
+// pop alert view
+id = $.av.pop({
+    title: 'alert title',
+    message: 'alert message',
+    template: 'default/error/black',
+    mode: 'notification/alert',
+    expire: 5000   // AlertView will be closed after 5000ms
+});
+
+// close alert view
+$.av.hide(id);
+```
+
 
 
 ##Alert mode
