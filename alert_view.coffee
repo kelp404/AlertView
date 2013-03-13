@@ -4,8 +4,8 @@ delay = (ms, func) -> setTimeout func, ms
 
 # jQuery easing
 $.extend $.easing,
-    avOutExpo: (x, t, b, c, d) -> if t == d then b+c else c * (-Math.pow(2, -10 * t/d) + 1) + b
-    avInExpo: (x, t, b, c, d) -> if t == 0 then b else c * Math.pow(2, 10 * (t/d - 1)) + b
+    avOutExpo: (x, t, b, c, d) -> if t is d then b+c else c * (-Math.pow(2, -10 * t/d) + 1) + b
+    avInExpo: (x, t, b, c, d) -> if t is 0 then b else c * Math.pow(2, 10 * (t/d - 1)) + b
 
 # AlertView
 $.extend $,
@@ -39,7 +39,8 @@ $.extend $,
                 box.css {opacity: 0.0, 'margin-top': '-25px'} if $('#alert_view_center').find('.alert_view').length is 0
                 $('#alert_view_center').html(box)
 
-                $('#' + aid).animate {opacity: 0.9, 'margin-top': '0'}, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
+                # alert view animate
+                $("##{aid}").animate {opacity: 0.9, 'margin-top': '0'}, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
             else
                 # notification mode
                 box = $ "<div id='#{aid}' class='alert_view alert_view_notification'><div class='av_title'>" + arg.title + '</div><div class="av_message">' + arg.message + '</div></div>'
@@ -47,10 +48,10 @@ $.extend $,
                 top = @queue.length * @height
                 @queue.push aid
                 $('body').append box
-                $('#' + aid).css {right: -@width, top: top}
+                $("##{aid}").css {right: -@width, top: top}
 
-                #insert alert view
-                $('#' + aid).animate right: 0, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
+                # alert view animate
+                $("##{aid}").animate right: 0, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
             # add template
             switch arg.template
                 when 'error' then box.addClass('alert_view_error')
@@ -61,14 +62,14 @@ $.extend $,
             ###
             hide alert view.
             ###
-            if $('#' + aid).hasClass 'alert_view_notification'
+            if $("##{aid}").hasClass 'alert_view_notification'
                 # notification mode
-                $('#' + aid).animate right: -@width, 400, 'avInExpo', ->
+                $("##{aid}").animate right: -@width, 400, 'avInExpo', ->
                     remove_top = parseInt $(@).css('top')
                     $.av.queue = $.av.queue.filter (x) -> x != aid
                     $(@).remove()
                     for id in $.av.queue
-                        $box = $('#' + id)
+                        $box = $("##{id}")
                         top = parseInt if $box.attr('new_top') then $box.attr('new_top') else $box.css('top')
                         if top >= remove_top
                             top -= $.av.height
@@ -77,5 +78,5 @@ $.extend $,
                             $box.animate top: top, 400, 'avOutExpo'
             else
                 # alert mode
-                $('#' + aid).animate opacity: 0.0, 400, -> $(@).remove()
+                $("##{aid}").animate opacity: 0.0, 400, -> $(@).remove()
             return
