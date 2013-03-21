@@ -10,7 +10,7 @@ $.extend $.easing,
 # AlertView
 $.extend $,
     av:
-        version: '1.0'
+        version: '1.0.1'
         width: 250
         height: 88
         prefix: 'alert_view_'
@@ -64,7 +64,7 @@ $.extend $,
             ###
             if $("##{aid}").hasClass 'alert_view_notification'
                 # notification mode
-                $("##{aid}").animate right: -@width, 400, 'avInExpo', ->
+                $("##{aid}").animate {right: -@width, opacity: 0}, 400, 'avInExpo', ->
                     remove_top = parseInt $(@).css('top')
                     $.av.queue = $.av.queue.filter (x) -> x != aid
                     $(@).remove()
