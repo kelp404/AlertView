@@ -2,6 +2,8 @@
 delay = (ms, func) -> setTimeout func, ms
 # delay 1000, -> something param
 
+$ = jQuery
+
 # jQuery easing
 $.extend $.easing,
     avOutExpo: (x, t, b, c, d) -> if t is d then b+c else c * (-Math.pow(2, -10 * t/d) + 1) + b
