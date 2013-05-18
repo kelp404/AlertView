@@ -20,7 +20,7 @@ Enjoy it :-)
 
 
 ##Demo
-https://alert-view.appspot.com/  
+http://kelp404.github.io/AlertView/  
 <img src='https://raw.github.com/kelp404/AlertView/master/_images/00.png' height='431px' width='850px' />
 
 
