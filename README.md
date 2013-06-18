@@ -21,7 +21,7 @@ Enjoy it :-)
 
 ##Demo
 http://kelp404.github.io/AlertView/  
-<img src='https://raw.github.com/kelp404/AlertView/master/_images/00.png' height='431px' width='850px' />
+<img src='https://raw.github.com/kelp404/AlertView/master/_images/00.png'/>
 
 
 ##Include jQuery and AlertView
