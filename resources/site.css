@@ -20,7 +20,7 @@ body
     font-size: 13px;
     font-family: CustomFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #232323;
-    background: url(https://flask-gae-kelp.appspot.com/css/dust.png);
+    background: url(dust.png);
 }
 
 /* content */
