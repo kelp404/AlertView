@@ -24,7 +24,7 @@ body
 }
 
 /* content */
-#content_background
+.cs_content_background
 {
     background-color: #fff;
     padding: 70px 0 20px 0;
@@ -32,7 +32,7 @@ body
 }
 
 /* footer */
-#footer
+.cs_footer
 {
     background-color: #f2f2f2;
     background: url(dust.png);
