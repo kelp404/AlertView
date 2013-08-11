@@ -49,10 +49,10 @@ $.av.hide(id);
 
 
 ##Alert mode
-You should add a `#alert_view_center` element in body, AlertView will be showed in that.
+You should add a `.alert_view_center` element in body, AlertView will be showed in that.
 ```html
 <div class="container">
-    <div id="alert_view_center" class="offset1 span10"></div>
+    <div class="alert_view_center offset1 span10"></div>
     ......
 ```
 ```javascript

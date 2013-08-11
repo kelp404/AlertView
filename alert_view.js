@@ -59,17 +59,17 @@
         }
         aid = this.prefix + ++this.increment_id;
         if (arg.mode === 'alert') {
-          box = $(("<div id='" + aid + "' class='alert_view'><span class='av_title'>") + arg.title + '</span> <span class="av_message">' + arg.message + ("</span><div class='av_close' onclick=\"$.av.hide('" + aid + "');\">X</div></div>"));
+          box = $("<div id='" + aid + "' class='alert_view'>\n    <span class='av_title'>" + arg.title + "</span>\n    <span class='av_message'>" + arg.message + "</span>\n    <div class='av_close' onclick=\"$.av.hide('" + aid + "');\">X</div>\n</div>");
           box.css({
-            width: $('#alert_view_center').width()
+            width: $('.alert_view_center').width()
           });
-          if ($('#alert_view_center').find('.alert_view').length === 0) {
+          if ($('.alert_view_center').find('.alert_view').length === 0) {
             box.css({
               opacity: 0.0,
               'margin-top': '-25px'
             });
           }
-          $('#alert_view_center').html(box);
+          $('.alert_view_center').html(box);
           $("#" + aid).animate({
             opacity: 0.9,
             'margin-top': '0'
@@ -77,7 +77,7 @@
             return $.av.hide(aid);
           }) : void 0);
         } else {
-          box = $(("<div id='" + aid + "' class='alert_view alert_view_notification'><div class='av_title'>") + arg.title + '</div><div class="av_message">' + arg.message + '</div></div>');
+          box = $("<div id='" + aid + "' class='alert_view alert_view_notification'>\n  <div class='av_title'>" + arg.title + "</div>\n  <div class='av_message'>" + arg.message + "</div>\n</div>");
           top = this.queue.length * this.height;
           this.queue.push(aid);
           $('body').append(box);

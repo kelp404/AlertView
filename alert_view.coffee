@@ -31,21 +31,28 @@ $.extend $,
             aid = @prefix + ++@increment_id
             if arg.mode is 'alert'
                 # alert mode
-                # you should add the #alert_view_center element in body.
-                box = $ "<div id='#{aid}' class='alert_view'><span class='av_title'>" +
-                        arg.title +
-                        '</span> <span class="av_message">' +
-                        arg.message +
-                        "</span><div class='av_close' onclick=\"$.av.hide('#{aid}');\">X</div></div>"
-                box.css {width: $('#alert_view_center').width()}
-                box.css {opacity: 0.0, 'margin-top': '-25px'} if $('#alert_view_center').find('.alert_view').length is 0
-                $('#alert_view_center').html(box)
+                # you should add the .alert_view_center element in body.
+                box = $("""
+                      <div id='#{aid}' class='alert_view'>
+                          <span class='av_title'>#{arg.title}</span>
+                          <span class='av_message'>#{arg.message}</span>
+                          <div class='av_close' onclick="$.av.hide('#{aid}');">X</div>
+                      </div>
+                      """)
+                box.css {width: $('.alert_view_center').width()}
+                box.css {opacity: 0.0, 'margin-top': '-25px'} if $('.alert_view_center').find('.alert_view').length is 0
+                $('.alert_view_center').html(box)
 
                 # alert view animate
                 $("##{aid}").animate {opacity: 0.9, 'margin-top': '0'}, 400, 'avOutExpo', if arg.expire > 0 then delay(arg.expire, -> $.av.hide(aid))
             else
                 # notification mode
-                box = $ "<div id='#{aid}' class='alert_view alert_view_notification'><div class='av_title'>" + arg.title + '</div><div class="av_message">' + arg.message + '</div></div>'
+                box = $("""
+                      <div id='#{aid}' class='alert_view alert_view_notification'>
+                        <div class='av_title'>#{arg.title}</div>
+                        <div class='av_message'>#{arg.message}</div>
+                      </div>
+                      """)
 
                 top = @queue.length * @height
                 @queue.push aid
