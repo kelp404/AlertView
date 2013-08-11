@@ -1,8 +1,7 @@
 #AlertView
 
 Kelp https://twitter.com/kelp404  
-[MIT License][mit]  
-[MIT]: http://www.opensource.org/licenses/mit-license.php
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 ```
          _    _           _    __     ___
@@ -35,7 +34,7 @@ http://kelp404.github.io/AlertView/
 ##Functions
 ```javascript
 // pop alert view
-id = $.av.pop({
+var id = $.av.pop({
     title: 'alert title',
     message: 'alert message',
     template: 'default/error/black',
@@ -106,3 +105,77 @@ var aid = $.av.pop({
         message: 'Alert View is an alert division ....'});
 $.av.hide(aid);
 ```
+
+
+
+
+##Development
+###[CoffeeScript](http://www.opensource.org/licenses/mit-license.php)
+```bash
+# install node.js with brew
+$ brew install node
+```
+```bash
+# install CoffeeScript
+$ git clon https://github.com/jashkenas/coffee-script.git
+$ cd coffee-script
+$ sudo bin/cake install
+```
+
+**[File Watchers][File Watchers]:**  
+
+Watcher Settings  |  value 
+:---------:|:---------:
+Program | /usr/local/bin/coffee
+Arguments | --compile $FileName$
+Output paths | $FileNameWithoutExtension$.js
+---
+
+
+
+###[Closure Compiler](https://code.google.com/p/closure-compiler/)
+You could download compiler form [Google Code](https://code.google.com/p/closure-compiler/wiki/BinaryDownloads?tm=2).  
+
+**[File Watchers][File Watchers]:**  
+
+Watcher Settings  |  value 
+:---------:|:---------:
+Program | /Users/Kelp/tool/closure-compiler/compiler.jar
+Arguments | --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$
+Output paths | $FileNameWithoutExtension$.min.js<br/>(Create output file from stdout)
+---
+
+
+
+###[Compass](https://github.com/chriseppstein/compass)
+```bash
+# install compass with gem
+$ gem install compass
+```
+
+**[File Watchers][File Watchers]:**  
+
+Watcher Settings  |  value 
+:---------:|:---------:
+Program | /Users/Kelp/.rvm/gems/ruby-1.9.3-p448/bin/compass
+Arguments | compile
+Environment variables | GEM_PATH:<br/>/Users/Kelp/.rvm/gems/ruby-1.9.3-p448:/Users/Kelp/.rvm/gems/ruby-1.9.3-p448@global
+Output paths | $FileNameWithoutExtension$.css
+
+```bash
+# You could find compass path by `which`.
+$ which compass
+>> /Users/Kelp/.rvm/gems/ruby-1.9.3-p448/bin/compass
+```
+```bash
+# You could get gem_path by `echo $GEM_PATH`.
+$ echo $GEM_PATH
+>> /Users/Kelp/.rvm/gems/ruby-1.9.3-p448:/Users/Kelp/.rvm/gems/ruby-1.9.3-p448@global
+```
+---
+
+
+
+[File Watchers]: http://www.jetbrains.com/pycharm/webhelp/file-watchers.html
+
+
