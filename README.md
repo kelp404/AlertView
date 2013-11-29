@@ -1,4 +1,4 @@
-#AlertView
+#AlertView [![devDependency Status](https://david-dm.org/kelp404/AlertView/dev-status.png?branch=master)](https://david-dm.org/kelp404/AlertView#info=devDependencies)
 
 Kelp https://twitter.com/kelp404  
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
@@ -20,14 +20,14 @@ Enjoy it :-)
 
 ##Demo
 http://kelp404.github.io/AlertView/  
-<img src='https://raw.github.com/kelp404/AlertView/master/_images/00.png'/>
+![image](_images/00.png)
 
 
 ##Include jQuery and AlertView
 ```html
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/alert_view.css"/>
-<script type="text/javascript" src="/alert_view.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/alert_view.css"/>
+<script type="text/javascript" src="dist/alert_view.min.js"></script>
 ```
 
 
@@ -110,72 +110,25 @@ $.av.hide(aid);
 
 
 ##Development
-###[CoffeeScript](http://www.opensource.org/licenses/mit-license.php)
 ```bash
-# install node.js with brew
-$ brew install node
+# install node modules
+$ npm install
 ```
 ```bash
-# install CoffeeScript
-$ git clon https://github.com/jashkenas/coffee-script.git
-$ cd coffee-script
-$ sudo bin/cake install
+# run the local server and the file watcher to compile CoffeeScript
+$ grunt dev
 ```
 
-**[File Watchers][File Watchers]:**  
-
-Watcher Settings  |  value 
-:---------:|:---------:
-Program | /usr/local/bin/coffee
-Arguments | --compile $FileName$
-Output paths | $FileNameWithoutExtension$.js
----
 
 
 
 ###[Closure Compiler](https://code.google.com/p/closure-compiler/)
-You could download compiler form [Google Code](https://code.google.com/p/closure-compiler/wiki/BinaryDownloads?tm=2).  
+You could download compiler form [Google Code](https://code.google.com/p/closure-compiler/wiki/BinaryDownloads?tm=2).
 
-**[File Watchers][File Watchers]:**  
+**[External Tools](http://www.jetbrains.com/pycharm/webhelp/external-tools.html):**
 
-Watcher Settings  |  value 
+Settings  |  value
 :---------:|:---------:
-Program | /Users/Kelp/tool/closure-compiler/compiler.jar
-Arguments | --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$
-Output paths | $FileNameWithoutExtension$.min.js<br/>(Create output file from stdout)
----
-
-
-
-###[Compass](https://github.com/chriseppstein/compass)
-```bash
-# install compass with gem
-$ gem install compass
-```
-
-**[File Watchers][File Watchers]:**  
-
-Watcher Settings  |  value 
-:---------:|:---------:
-Program | /Users/Kelp/.rvm/gems/ruby-1.9.3-p448/bin/compass
-Arguments | compile
-Environment variables | GEM_PATH:<br/>/Users/Kelp/.rvm/gems/ruby-1.9.3-p448:/Users/Kelp/.rvm/gems/ruby-1.9.3-p448@global
-Output paths | $FileNameWithoutExtension$.css
-
-```bash
-# You could find compass path by `which`.
-$ which compass
->> /Users/Kelp/.rvm/gems/ruby-1.9.3-p448/bin/compass
-```
-```bash
-# You could get gem_path by `echo $GEM_PATH`.
-$ echo $GEM_PATH
->> /Users/Kelp/.rvm/gems/ruby-1.9.3-p448:/Users/Kelp/.rvm/gems/ruby-1.9.3-p448@global
-```
----
-
-
-
-[File Watchers]: http://www.jetbrains.com/pycharm/webhelp/file-watchers.html
-
-
+Program | java
+Parameters | -jar /Volumes/Data/tools/closure-compiler/compiler.jar --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$ --js_output_file $FileNameWithoutExtension$.min.$FileExt$
+Working directory | $FileDir$
