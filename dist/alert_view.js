@@ -37,10 +37,10 @@
         if (arg == null) {
           arg = {};
         }
+
         /*
         pop alert view.
-        */
-
+         */
         if (arg.expire == null) {
           arg.expire = 5000;
         }
@@ -100,10 +100,10 @@
         return aid;
       },
       hide: function(aid) {
+
         /*
         hide alert view.
-        */
-
+         */
         if ($("#" + aid).hasClass('alert_view_notification')) {
           $("#" + aid).animate({
             right: -this.width,
